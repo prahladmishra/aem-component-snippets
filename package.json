@@ -1,8 +1,14 @@
 {
     "name": "aem-component-snippets",
-    "displayName": "aem-component-snippets",
+    "displayName": "AEM Component Snippets",
     "description": "Code snippets extension for generating AEM components",
     "version": "0.0.1",
+    "publisher":"Prahlad Mishra",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/prahladmishra/aem-component-snippets"
+    },
+    "icon": "icon.png",
     "engines": {
         "vscode": "^1.39.0"
     },
