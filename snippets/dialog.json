@@ -1,0 +1,34 @@
+{
+    "Component dialog starter template":{
+        "prefix":"!aemcompdialog",
+        "body":[
+            "<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
+"<jcr:root xmlns:sling=\"http://sling.apache.org/jcr/sling/1.0\" xmlns:granite=\"http://www.adobe.com/jcr/granite/1.0\" xmlns:cq=\"http://www.day.com/jcr/cq/1.0\" xmlns:jcr=\"http://www.jcp.org/jcr/1.0\" xmlns:nt=\"http://www.jcp.org/jcr/nt/1.0\" jcr:primaryType=\"nt:unstructured\" jcr:title=\"Component Dialog\" sling:resourceType=\"cq/gui/components/authoring/dialog\">",
+    "<content jcr:primaryType=\"nt:unstructured\" sling:resourceType=\"granite/ui/components/coral/foundation/tabs\" maximized=\"{Boolean}true\">",
+        "<items jcr:primaryType=\"nt:unstructured\">${1:Tab}</items>",
+    "</content>",
+"</jcr:root>"
+        ],
+        "desciption":"Creates dialog Scaffolding"
+    },
+    "Compontent tab creator":{
+        "prefix":"!aemcomptab",
+        "body":[
+            "<tab jcr:primaryType=\"nt:unstructured\" jcr:title=\"Config\" sling:resourceType=\"granite/ui/components/coral/foundation/fixedcolumns\" margin=\"{Boolean}true\">",
+                "<items jcr:primaryType=\"nt:unstructured\">",
+                    "<columns jcr:primaryType=\"nt:unstructured\" sling:resourceType=\"granite/ui/components/coral/foundation/container\">",
+                        "<items jcr:primaryType=\"nt:unstructured\">${1:Items}</items>",
+                    "</columns>",
+                "</items>",
+            "</tab>"
+        ],
+        "description":"Adds tab in component dialog"
+    },
+    "Textarea":{
+        "prefix":"!aemfieldtextarea",
+        "body":[
+            "<textarea jcr:primaryType=\"nt:unstructured\" sling:resourceType=\"granite/ui/components/coral/foundation/form/textarea\" fieldLabel=\"Textarea\" name=\"${1:name}\"/>"
+        ],
+        "description":"Adds teatarea field"
+    }
+}
