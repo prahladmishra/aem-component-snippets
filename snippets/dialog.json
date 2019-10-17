@@ -3,32 +3,68 @@
         "prefix":"!aemcompdialog",
         "body":[
             "<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
-"<jcr:root xmlns:sling=\"http://sling.apache.org/jcr/sling/1.0\" xmlns:granite=\"http://www.adobe.com/jcr/granite/1.0\" xmlns:cq=\"http://www.day.com/jcr/cq/1.0\" xmlns:jcr=\"http://www.jcp.org/jcr/1.0\" xmlns:nt=\"http://www.jcp.org/jcr/nt/1.0\" jcr:primaryType=\"nt:unstructured\" jcr:title=\"Component Dialog\" sling:resourceType=\"cq/gui/components/authoring/dialog\">",
-    "<content jcr:primaryType=\"nt:unstructured\" sling:resourceType=\"granite/ui/components/coral/foundation/tabs\" maximized=\"{Boolean}true\">",
-        "<items jcr:primaryType=\"nt:unstructured\">${1:Tab}</items>",
-    "</content>",
-"</jcr:root>"
+            "<jcr:root xmlns:sling=\"http://sling.apache.org/jcr/sling/1.0\" xmlns:granite=\"http://www.adobe.com/jcr/granite/1.0\" xmlns:cq=\"http://www.day.com/jcr/cq/1.0\" xmlns:jcr=\"http://www.jcp.org/jcr/1.0\" xmlns:nt=\"http://www.jcp.org/jcr/nt/1.0\" jcr:primaryType=\"nt:unstructured\" jcr:title=\"Component Dialog\" sling:resourceType=\"cq/gui/components/authoring/dialog\">",
+            "   <content jcr:primaryType=\"nt:unstructured\" sling:resourceType=\"granite/ui/components/coral/foundation/tabs\" maximized=\"{Boolean}true\">",
+            "       <items jcr:primaryType=\"nt:unstructured\">${1:Tab}</items>",
+            "   </content>",
+            "</jcr:root>"
         ],
         "desciption":"Creates dialog Scaffolding"
     },
     "Compontent tab creator":{
         "prefix":"!aemcomptab",
         "body":[
-            "<tab jcr:primaryType=\"nt:unstructured\" jcr:title=\"Config\" sling:resourceType=\"granite/ui/components/coral/foundation/fixedcolumns\" margin=\"{Boolean}true\">",
-                "<items jcr:primaryType=\"nt:unstructured\">",
-                    "<columns jcr:primaryType=\"nt:unstructured\" sling:resourceType=\"granite/ui/components/coral/foundation/container\">",
-                        "<items jcr:primaryType=\"nt:unstructured\">${1:Items}</items>",
-                    "</columns>",
-                "</items>",
-            "</tab>"
+            "<tab_$TM_LINE_INDEX jcr:primaryType=\"nt:unstructured\" jcr:title=\"Config\" sling:resourceType=\"granite/ui/components/coral/foundation/fixedcolumns\" margin=\"{Boolean}true\">",
+            "   <items jcr:primaryType=\"nt:unstructured\">",
+            "       <columns jcr:primaryType=\"nt:unstructured\" sling:resourceType=\"granite/ui/components/coral/foundation/container\">",
+            "           <items jcr:primaryType=\"nt:unstructured\">${1:Items}</items>",
+            "       </columns>",
+            "   </items>",
+            "</tab_$TM_LINE_INDEX>"
         ],
         "description":"Adds tab in component dialog"
     },
     "Textarea":{
         "prefix":"!aemfieldtextarea",
         "body":[
-            "<textarea jcr:primaryType=\"nt:unstructured\" sling:resourceType=\"granite/ui/components/coral/foundation/form/textarea\" fieldLabel=\"Textarea\" name=\"${1:name}\"/>"
+            "<textarea_$TM_LINE_INDEX jcr:primaryType=\"nt:unstructured\" sling:resourceType=\"granite/ui/components/coral/foundation/form/textarea\" fieldDescription=\"Field description\" fieldLabel=\"Textarea $TM_LINE_INDEX\" name=\"./textarea_$TM_LINE_INDEX\" required=\"{Boolean}true\"/>"
         ],
-        "description":"Adds teatarea field"
+        "description":"Adds teatarea"
+    },
+    "Text Field":{
+        "prefix":"!aemfieldtextfield",
+        "body":[
+            "<textfield_$TM_LINE_INDEX jcr:primaryType=\"nt:unstructured\" sling:resourceType=\"granite/ui/components/coral/foundation/form/textfield\" fieldDescription=\"Field description\" fieldLabel=\"Textfield $TM_LINE_INDEX\" maxLength=\"{Long}35\" name=\"./textfield_$TM_LINE_INDEX\" required=\"{Boolean}true\"/>"
+        ],
+        "description":"Adds textfield"    
+    },
+    "Number Field":{
+        "prefix":"!aemfieldnumberfield",
+        "body":[
+            "<numberfield_$TM_LINE_INDEX jcr:primaryType=\"nt:unstructured\" sling:resourceType=\"granite/ui/components/coral/foundation/form/numberfield\" fieldDescription=\"Field description\" fieldLabel=\"Numberfield $TM_LINE_INDEX\" max=\"50\" min=\"0\" name=\"./numberfield_$TM_LINE_INDEX\" required=\"{Boolean}true\"/>"
+        ],
+        "description":"Adds numberfield"
+    },
+    "Selection Dropdown":{
+        "prefix":"!aemfieldselection",
+        "body":[
+            "<selection_$TM_LINE_INDEX jcr:primaryType=\"nt:unstructured\" sling:resourceType=\"granite/ui/components/coral/foundation/form/select\" fieldDescription=\"Field Description\" fieldLabel=\"Selection $TM_LINE_INDEX\" name=\"./selection_$TM_LINE_INDEX\" value=\"default\" required=\"{Boolean}true\">",
+            "   <items jcr:primaryType=\"nt:unstructured\">",
+            "       <default jcr:primaryType=\"nt:unstructured\" text=\"Default\" value=\"default\"/>",
+            "       <item_1 jcr:primaryType=\"nt:unstructured\" text=\"Item 1\" value=\"item_1\"/>",
+            "       <item_2 jcr:primaryType=\"nt:unstructured\" text=\"Item 2\" value=\"item_2\"/>",
+            "       <item_3 jcr:primaryType=\"nt:unstructured\" text=\"Item 3\" value=\"item_3\"/>",
+            "   </items>",
+            "</selection_$TM_LINE_INDEX>"
+        ],
+        "description":"Adds selection dropdown"
+    },
+    "Checkbox":{
+        "prefix":"!aemfieldcheckbox",
+        "body":[
+            "<checkbox_$TM_LINE_INDEX jcr:primaryType=\"nt:unstructured\" sling:resourceType=\"granite/ui/components/coral/foundation/form/checkbox\" name=\"./checkbox_$TM_LINE_INDEX\" text=\"Checkbox $TM_LINE_INDEX\" uncheckedValue=\"false\" value=\"true\" required=\"{Boolean}true\"/>",
+            "<checkbox_$TM_LINE_INDEX-TypeHint jcr:primaryType=\"nt:unstructured\" sling:resourceType=\"granite/ui/components/foundation/form/hidden\" name=\"./checkbox_$TM_LINE_INDEX@TypeHint\" value=\"Boolean\"/>"
+        ],
+        "description":"Adds Checkbox"
     }
 }
