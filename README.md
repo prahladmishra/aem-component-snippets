@@ -1,6 +1,6 @@
 # aem-component-snippets README
 
-This is the README for your extension "aem-component-snippets". After writing up a brief description, we recommend including the following sections.
+This Visual Studio Code extenstion provides various code snippets to write Adobe Experience Manager (AEM) components and its elements efficiently and consistently.
 
 ## Features
 
