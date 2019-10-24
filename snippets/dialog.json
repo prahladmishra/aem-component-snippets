@@ -63,7 +63,7 @@
             "<numberfield_$TM_LINE_INDEX",
             "   jcr:primaryType=\"nt:unstructured\"",
             "   sling:resourceType=\"granite/ui/components/coral/foundation/form/numberfield\"",
-            "   fieldLabel=\"${1:label for Numberfield $TM_LINE_INDEX}\"",
+            "   fieldLabel=\"${1:Label for Numberfield $TM_LINE_INDEX}\"",
             "   fieldDescription=\"${2:Field description}\"",
             "   max=\"${3:50}\"",
             "   min=\"${4:0}\"",
@@ -114,5 +114,73 @@
             "$0"
         ],
         "description":"Adds Checkbox"
+    },
+    "Path field":{
+        "prefix":"!aemfieldpathfield",
+        "body":[
+            "<pathfield_$TM_LINE_INDEX",
+            "   jcr:primaryType=\"nt:unstructured\"",
+            "   sling:resourceType=\"granite/ui/components/coral/foundation/form/pathfield\"",
+            "   fieldLabel=\"${1:Label for Path Field $TM_LINE_INDEX}\"",
+            "   fieldDescription=\"${2:Field description}\"",
+            "   rootPath=\"${3:Root Path}\"/>",
+            "   name=\"./${4:pathfield_$TM_LINE_INDEX}\"",
+            "   required=\"{Boolean}${5|true,false|}\"/>",
+            "$0"
+        ],
+        "description":"Adds pathfield"
+    },
+    "Multifield":{
+        "prefix":"!aemfieldmultifield",
+        "body":[
+            "<multifield_$TM_LINE_INDEX",
+            "   jcr:primaryType=\"nt:unstructured\"",
+            "   sling:resourceType=\"granite/ui/components/coral/foundation/form/multifield\"",
+            "   fieldLabel=\"${1:Label for Path Field $TM_LINE_INDEX}\"",
+            "   fieldDescription=\"${2:Field description}\"",
+            "   composite=\"{Boolean}${3|true,false|}\"",
+            "   required=\"{Boolean}${4|true,false|}\"/>",
+            "   <field",
+            "       jcr:primaryType=\"nt:unstructured\"",
+            "       sling:resourceType=\"granite/ui/components/coral/foundation/container\"",
+            "       name=\"./${5:multifield_$TM_LINE_INDEX}\">",
+            "       <items jcr:primaryType=\"nt:unstructured\">",
+            "           <column",
+            "               jcr:primaryType=\"nt:unstructured\"",
+            "               sling:resourceType=\"granite/ui/components/coral/foundation/container\">",
+            "               <items jcr:primaryType=\"nt:unstructured\">",
+            "                   ${0}",
+            "               </items>",
+            "           </column>",
+            "       </items>",
+            "   </field>",
+            "</multifield_$TM_LINE_INDEX>"
+        ],
+        "description":"Adds multifield"
+    },
+    "Rich Text Editor":{
+        "prefix":"!aemfieldrte",
+        "body":[
+            "<rte_$TM_LINE_INDEX",
+            "   jcr:primaryType=\"nt:unstructured\"",
+            "   sling:resourceType=\"cq/gui/components/authoring/dialog/richtext\"",
+            "   fieldLabel=\"${1:Label for RTE $TM_LINE_INDEX}\"",
+            "   fieldDescription=\"${2:Field description}\"",
+            "   name=\"./${3:rte_$TM_LINE_INDEX}\">",
+            "   useFixedInlineToolbar=\"{Boolean}${4|true,false|}\"",
+            "   required=\"{Boolean}${5|true,false|}\"/>",
+            "   <rtePlugins",
+            "       jcr:primaryType=\"nt:unstructured\"",
+            "       sling:resourceSuperType=\"${6:Path to main RTE}/rtePlugins\"/>",
+            "   <uiSettings",
+            "       jcr:primaryType=\"nt:unstructured\"",
+            "       sling:resourceSuperType=\"${6}/uiSettings\"/>",
+            "   <htmlRules",
+            "       jcr:primaryType=\"nt:unstructured\"",
+            "       sling:resourceSuperType=\"${6}/htmlRules\"/>",
+            "</rte_$TM_LINE_INDEX>",
+            "$0"
+        ],
+        "description":"Adds Rich text Editor"
     }
 }

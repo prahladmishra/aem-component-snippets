@@ -1,0 +1,44 @@
+{
+    "Component Resource Implementation":{
+        "prefix":"!aemcompresourceimpl",
+        "body":[
+            "import org.apache.sling.api.resource.Resource;",
+            "import org.apache.sling.models.annotations.DefaultInjectionStrategy;",
+            "import org.apache.sling.models.annotations.Exporter;",
+            "import org.apache.sling.models.annotations.Model;",
+            "\n",
+            "@Model(",
+            "   adaptables = Resource.class,",
+            "   adapters = ${1:Component}.class,",
+            "   defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL,",
+            "   resourceType = ${2:Resource Type}",
+            ")",
+            "@Exporter(name = \"jackson\", extensions = \"json\")",
+            "public class $TM_FILENAME_BASE implements ${1} {",
+            "$0",
+            "}"
+        ],
+        "desciption":"Creates scaffolding for Sling Model with Resource"
+    },
+    "Component Sling Http Servlet Request Implementation":{
+        "prefix":"!aemcompslinghttpservletrequestimpl",
+        "body":[
+            "import org.apache.sling.api.SlingHttpServletRequest;",
+            "import org.apache.sling.models.annotations.DefaultInjectionStrategy;",
+            "import org.apache.sling.models.annotations.Exporter;",
+            "import org.apache.sling.models.annotations.Model;",
+            "\n",
+            "@Model(",
+            "   adaptables = SlingHttpServletRequest.class,",
+            "   adapters = ${1:Component}.class,",
+            "   defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL,",
+            "   resourceType = ${2:Resource Type}",
+            ")",
+            "@Exporter(name=\"jackson\", extensions = \"json\")",
+            "public class $TM_FILENAME_BASE implements ${1} {",
+            "$0",
+            "}"
+        ],
+        "desciption":"Creates scaffolding for Sling Model with SlingHttpServletRequest"
+    }
+}

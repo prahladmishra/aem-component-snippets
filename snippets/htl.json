@@ -1,0 +1,11 @@
+{
+    "Component HTL Creator":{
+        "prefix":"!aemcomphtl",
+        "body":[
+            "<sly data-sly-use.${1:logic}=\"${2:Component Java class}\"/>",
+            "<div data-sly-test=\"${(wcmmode.edit || wcmmode.design) && !${1}.${3:Test Condition}}\" class=\"cq-placeholder\" data-emptytext=\"Configure ${component.title} Component\"></div>",
+            "$0"
+        ],
+        "description":"Creates scaffolding for Component HTL"
+    }
+}
